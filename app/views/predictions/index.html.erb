@@ -1,0 +1,22 @@
+<table class='table table-hover table-responsive'>
+	<tr>
+		<th>State</th>
+		<th>Electoral Votes</th>
+		<% @candidates.each do |candidate| %>
+			<th><%= candidate.name %></th>
+		<% end %>
+	</tr>
+	<% @states.each do |state| %>
+		<tr>
+			<th><%= state.name %></th>
+			<td><%= state.votes %></td>
+			<% @candidates.each do |candidate| %>
+				<td><%= radio_button_tag state.id, candidate.id, current_user.selected_candidate(state.id, candidate.id), data: {
+						remote: true,
+						url: url_for(action: :pick, user_id: current_user.id, candidate_id: candidate.id, state_id: state.id),
+						method: 'POST'
+					} %></td>
+			<% end %>
+		</tr>
+	<% end %>
+</table>

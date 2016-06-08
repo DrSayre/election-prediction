@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  state: one
+  candidate: one
+  pick_date: 2016-06-07 23:17:55
+
+two:
+  user: two
+  state: two
+  candidate: two
+  pick_date: 2016-06-07 23:17:55
