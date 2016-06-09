@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  votes: 1
+kentucky:
+  name: 'Kentucky'
+  votes: 10
 
-two:
-  name: MyString
-  votes: 1
+tennessee:
+  name: 'Tennessee'
+  votes: 12
+
+indiana:
+  name: 'Indiana'
+  votes: 8

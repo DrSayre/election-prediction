@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  state: one
-  candidate: one
+  user: caleb
+  state: kentucky
+  candidate: donald
   pick_date: 2016-06-07 23:17:55
 
 two:
-  user: two
-  state: two
-  candidate: two
+  user: hank_hill
+  state: tennessee
+  candidate: hillary
   pick_date: 2016-06-07 23:17:55
