@@ -15,6 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'bootstrap3_form_builder'
+# gem 'sticky_table_headers', path: '/Users/calebsayre/Documents/Programming/sticky_table_headers/'
+gem 'rails-assets-StickyTableHeaders', source: 'https://rails-assets.org'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

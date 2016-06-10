@@ -3,30 +3,14 @@
 
   <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
+    <%= f.email_field :email, autofocus: true %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-
-    <div class="field">
-      <%= f.password_field :password, autocomplete: "off", help_block: "<i>(Leave blank if you don't want to change it)</i>".html_safe %>
-    </div>
-
-    <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-
-    <div class="field">
-      <%= f.password_field :current_password, autocomplete: "off", help_block: '<i>(we need your current password to confirm your changes)</i>'.html_safe %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Update" %>
-    </div>
+    <%= f.password_field :password, autocomplete: "off", help_block: "<i>(Leave blank if you don't want to change it)</i>".html_safe %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :current_password, autocomplete: "off", help_block: '<i>(we need your current password to confirm your changes)</i>'.html_safe %>
+    <%= f.submit "Update" %>
   <% end %>
 
   <h3>Cancel my account</h3>

@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-	test 'correct number of unassigned votes' do
+  test 'correct number of unassigned votes' do
     assert_equal 20, users(:caleb).votes_not_assigned, 'Caleb has 10 votes not assigned'
   end
 

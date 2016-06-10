@@ -1,29 +1,41 @@
-<table class='table table-hover table-responsive'>
-	<tr>
-		<th>State</th>
-		<th>Electoral Votes</th>
-		<% @candidates.each do |candidate| %>
-			<th><%= candidate.name %></th>
-		<% end %>
-	</tr>
-	<% @states.each do |state| %>
-		<tr>
-			<th><%= state.name %></th>
-			<td><%= state.votes %></td>
-			<% @candidates.each do |candidate| %>
-				<td><%= radio_button_tag state.id, candidate.id, current_user.selected_candidate(state, candidate), data: {
+<div class='container'>
+  <table class='table table-hover table-responsive'>
+    <thead>
+      <tr>
+		    <th>State</th>
+		    <th>Electoral Votes</th>
+		    <% @candidates.each do |candidate| %>
+          <th><%= candidate.name %></th>
+		    <% end %>
+      </tr>
+    </thead>
+    <% @states.each do |state| %>
+		  <tr>
+        <th><%= state.name %></th>
+        <td><%= state.votes %></td>
+        <% @candidates.each do |candidate| %>
+				  <td><%= radio_button_tag state.id, candidate.id, current_user.selected_candidate(state, candidate), data: {
 						remote: true,
 						url: url_for(action: :pick, user_id: current_user.id, candidate_id: candidate.id, state_id: state.id),
 						method: 'POST'
-					}, class: 'radio_selector' %></td>
-			<% end %>
-		</tr>
-	<% end %>
-	<tr data-turbolinks-action='replace'>
-    <th>Total</th>
-    <th><%= current_user.votes_not_assigned %></th>
-    <% @candidates.each do |candidate| %>
-      <th><%= current_user.votes_for_candidate(candidate) %></th>
+					 }, class: 'radio_selector' %></td>
+        <% end %>
+		  </tr>
     <% end %>
-  </tr>
-</table>
+    <tr data-turbolinks-action='replace'>
+      <th>Total</th>
+      <th><%= current_user.votes_not_assigned %></th>
+      <% @candidates.each do |candidate| %>
+        <th><%= current_user.votes_for_candidate(candidate) %></th>
+      <% end %>
+    </tr>
+  </table>
+</div>
+<script>
+  $('table').stickyTableHeaders({fixedOffset: $('.navbar')});
+</script>
+<style>
+  thead {
+    background-color: white;
+  }
+</style>
